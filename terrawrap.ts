@@ -173,7 +173,8 @@ locals {
       }
     }
   }
-}`;
+}
+`;
 
 log(`zz_generated.tf:\n${generatedContent}`);
 
