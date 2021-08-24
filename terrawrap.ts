@@ -106,6 +106,9 @@ const terraform = async (
 ): Promise<number> => {
   try {
     if (before) await before();
+    if (Deno.env.get("TERRAWRAP_NO_TERRAFORM") == "true") {
+      return 0;
+    }
     const status = await Deno.run({ cmd: ["terraform", ...Deno.args] })
       .status();
     return (status.signal == null) ? status.code : 1;
