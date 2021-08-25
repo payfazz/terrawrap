@@ -50,8 +50,8 @@ const workingDir: string = (() => {
 function* allPossibleConfigLocation(): Generator<string, void, void> {
   let dir = workingDir;
   while (true) {
-    yield path.join(dir, "wrapper-config.yml");
-    yield path.join(dir, "wrapper-config.yaml");
+    yield path.join(dir, "terrawrap-config.yml");
+    yield path.join(dir, "terrawrap-config.yaml");
     const newDir = path.dirname(dir);
     if (newDir == dir) {
       break;
